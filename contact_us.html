@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Final Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CUSTOM TAILWIND COLORS -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            foreGreen: "#2e8b57",
+            foreBrown: "#5a3e36",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-gray-50">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm sticky top-0 z-30 w-full">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between py-4">
+        
+        <!-- Logo -->
+        <img src="img/Logo_fore_2020_color_landscape.jpg" alt="Fore Coffee" class="h-8">
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-800">
+          <a href="index.html" class="hover:text-foreGreen">Home</a>
+          <a href="biodata.html" class="hover:text-foreGreen">Biodata</a>
+          <a href="contact_us.html" class="text-foreGreen font-semibold">Contact</a>
+          <a href="posts.html" class="hover:text-foreGreen">Posts</a>
+          <a href="freepage.html" class="hover:text-foreGreen">FreePage</a>
+        </nav>
+
+        <!-- Right Side -->
+        <div class="flex items-center space-x-4">
+          <a href="#app"
+            class="hidden md:inline-flex px-5 py-2 rounded-full border border-foreGreen text-foreGreen font-semibold text-sm hover:bg-foreGreen hover:text-white transition">
+            Download App
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-toggle"
+            class="lg:hidden w-10 h-10 flex items-center justify-center border border-gray-300 rounded-md">
+            <div class="space-y-1">
+              <span class="block w-5 h-0.5 bg-gray-700"></span>
+              <span class="block w-5 h-0.5 bg-gray-700"></span>
+              <span class="block w-5 h-0.5 bg-gray-700"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+      <div class="px-4 py-4 space-y-4">
+        <nav class="flex flex-col space-y-3 text-sm text-gray-800">
+          <a href="index.html" class="hover:text-foreGreen">Home</a>
+          <a href="biodata.html" class="hover:text-foreGreen">Biodata</a>
+          <a href="contact_us.html" class="text-foreGreen font-semibold">Contact</a>
+          <a href="posts.html" class="hover:text-foreGreen">Posts</a>
+          <a href="freepage.html" class="hover:text-foreGreen">FreePage</a>
+        </nav>
+
+        <a href="#app"
+          class="w-full inline-flex justify-center px-5 py-2 rounded-full border border-foreGreen text-foreGreen font-semibold hover:bg-foreGreen hover:text-white transition">
+          Download App
+        </a>
+      </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="bg-foreBrown text-white text-sm">
+      <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col md:flex-row md:justify-center md:items-center gap-2">
+        <span class="text-center">Something new from us! Enjoy a new experience at FORE DONUT</span>
+        <a href="#" class="px-4 py-1 bg-white text-foreBrown rounded-full text-xs font-semibold hover:bg-gray-100 transition">
+          Visit
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main class="max-w-3xl mx-auto px-4 md:px-6 py-10">
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Student Registration Form</h1>
+
+    <!-- Success Message -->
+    <div id="success-message"
+      class="hidden mb-6 p-4 bg-green-100 border border-green-300 text-green-700 rounded-lg">
+      Form submitted successfully!
+    </div>
+
+    <!-- FORM -->
+    <form id="registration-form" class="bg-white p-6 md:p-8 rounded-xl shadow-md space-y-6">
+
+      <!-- Input Group -->
+      <div class="space-y-1">
+        <label class="font-medium">Full Name</label>
+        <input type="text" id="fullname"
+          class="w-full p-3 border rounded-lg focus:ring-foreGreen focus:border-foreGreen" />
+      </div>
+
+      <div class="space-y-1">
+        <label class="font-medium">Student ID (NIM)</label>
+        <input type="text" id="nim"
+          class="w-full p-3 border rounded-lg focus:ring-foreGreen focus:border-foreGreen" />
+      </div>
+
+      <div class="space-y-1">
+        <label class="font-medium">Email</label>
+        <input type="email" id="email"
+          class="w-full p-3 border rounded-lg focus:ring-foreGreen focus:border-foreGreen" />
+      </div>
+
+      <div class="space-y-1">
+        <label class="font-medium">Faculty / Major</label>
+        <select id="faculty"
+          class="w-full p-3 border rounded-lg focus:ring-foreGreen focus:border-foreGreen">
+          <option>-- Select Faculty --</option>
+          <option>FTI</option>
+          <option>FEB</option>
+          <option>FKIP</option>
+          <option>FIKES</option>
+          <option>FAPERTA</option>
+        </select>
+      </div>
+
+      <div class="space-y-1">
+        <label class="font-medium">Date of Birth</label>
+        <input type="date" id="dob"
+          class="w-full p-3 border rounded-lg focus:ring-foreGreen focus:border-foreGreen" />
+      </div>
+
+      <!-- Gender -->
+      <div class="space-y-1">
+        <label class="font-medium">Gender</label>
+        <div class="flex items-center gap-6">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="gender" value="Male" /> Male
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="gender" value="Female" /> Female
+          </label>
+        </div>
+      </div>
+
+      <div class="space-y-1">
+        <label class="font-medium">Address</label>
+        <textarea id="address" rows="3"
+          class="w-full p-3 border rounded-lg focus:ring-foreGreen focus:border-foreGreen"></textarea>
+      </div>
+
+      <div class="space-y-1">
+        <label class="font-medium">Phone Number</label>
+        <input type="text" id="phone"
+          class="w-full p-3 border rounded-lg focus:ring-foreGreen focus:border-foreGreen" />
+      </div>
+
+      <button type="submit"
+        class="w-full py-3 bg-foreGreen text-white font-semibold rounded-lg hover:bg-green-700 transition">
+        Submit
+      </button>
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-foreBrown text-white py-6 mt-16">
+    <div class="max-w-6xl mx-auto text-center px-4">
+      <p class="text-sm">&copy; 2024 Final Project — All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- JS VALIDATION -->
+  <script>
+    const form = document.getElementById("registration-form");
+    const successMsg = document.getElementById("success-message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const fullname = document.getElementById("fullname").value.trim();
+      const nim = document.getElementById("nim").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const faculty = document.getElementById("faculty").value.trim();
+      const dob = document.getElementById("dob").value;
+      const gender = document.querySelector("input[name='gender']:checked");
+      const address = document.getElementById("address").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      if (!fullname || !nim || !email || !faculty || !dob || !gender || !address || !phone) {
+        alert("All fields are required!");
+        return;
+      }
+
+      if (!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
+        alert("Invalid email format!");
+        return;
+      }
+
+      if (!/^\d{10,}$/.test(phone)) {
+        alert("Phone number must be at least 10 digits and numeric.");
+        return;
+      }
+
+      successMsg.classList.remove("hidden");
+      form.reset();
+
+      setTimeout(() => successMsg.classList.add("hidden"), 3000);
+    });
+
+    // Mobile Menu Toggle
+    document.getElementById("mobile-menu-toggle").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>

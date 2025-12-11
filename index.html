@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Fore Coffee Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            foreGreen: '#007E3A',
+            foreGreenDark: '#00602B',
+            foreBrown: '#7A4A2F',
+            foreBg: '#F5F3EC',
+          },
+          fontFamily: {
+            sans: ['system-ui', 'ui-sans-serif', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+    }
+  </style>
+</head>
+<body class="font-sans bg-foreBg text-gray-900">
+
+  <a href="#"
+     class="fixed bottom-4 right-4 z-40 w-12 h-12 rounded-full bg-foreGreen flex items-center justify-center shadow-lg hover:bg-foreGreenDark transition">
+    <span class="text-white text-2xl">🟢</span>
+  </a>
+
+  <div class="min-h-screen">
+
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between py-4">
+
+        <!-- Logo -->
+        <img src="img/Logo_fore_2020_color_landscape.jpg" alt="Fore Coffee" class="h-8">
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-800">
+          <a href="index.html" class="hover:text-foreGreen">Home</a>
+          <a href="biodata.html" class="hover:text-foreGreen">Biodata</a>
+          <a href="contact_us.html" class="hover:text-foreGreen">Contact</a>
+          <a href="posts.html" class="text-foreGreen font-semibold">Posts</a>
+          <a href="freepage.html" class="hover:text-foreGreen">FreePage</a>
+        </nav>
+
+        <!-- Right Side -->
+        <div class="flex items-center space-x-4 text-sm">
+          <a href="#app"
+            class="hidden md:inline-flex px-5 py-2 rounded-full border border-foreGreen  text-foreGreen hover:bg-foreGreen hover:text-white transition font-semibold">
+            Download App
+          </a>
+
+          <!-- Mobile menu icon -->
+          <button id="mobile-menu-toggle"
+            class="lg:hidden flex items-center justify-center w-10 h-10 rounded-md border border-gray-300"
+            aria-label="Toggle navigation">
+            <div class="space-y-1.5">
+              <span class="block w-5 h-0.5 bg-gray-700"></span>
+              <span class="block w-5 h-0.5 bg-gray-700"></span>
+              <span class="block w-5 h-0.5 bg-gray-700"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+      <div class="px-4 py-4 space-y-4">
+
+        <nav class="flex flex-col space-y-3 text-sm font-medium text-gray-800">
+          <a href="index.html" class="hover:text-foreGreen">Home</a>
+          <a href="biodata.html" class="hover:text-foreGreen">Biodata</a>
+          <a href="contact_us.html" class="hover:text-foreGreen">Contact</a>
+          <a href="posts.html" class="text-foreGreen font-semibold">Posts</a>
+          <a href="freepage.html" class="hover:text-foreGreen">FreePage</a>
+        </nav>
+
+        <a href="#app"
+          class="w-full inline-flex justify-center px-5 py-2 rounded-full border border-foreGreen text-foreGreen font-semibold hover:bg-foreGreen hover:text-white transition">
+          Download App
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="bg-foreBrown text-white text-sm">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 py-2 flex flex-col md:flex-row items-center justify-center gap-2">
+        <span class="text-center">Something new from us! Enjoy a new experience at FORE DONUT</span>
+        <a href="#" class="px-4 py-1 bg-white text-foreBrown rounded-full text-xs font-semibold hover:bg-gray-100 transition">
+          Visit
+        </a>
+      </div>
+    </div>
+  </header>
+
+    <main class="max-w-6xl mx-auto px-4 lg:px-0">
+
+      <section class="pt-10 pb-20 flex flex-col lg:flex-row items-center">
+        <div class="hidden md:flex lg:w-10 justify-center">
+          <button class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-foreGreen hover:text-foreGreen transition">
+            ‹
+          </button>
+        </div>
+
+        <div class="lg:w-1/2 mt-6 lg:mt-0 lg:pl-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-foreGreen">
+            Grind The<br>Essentials
+          </h1>
+          <p class="mt-6 text-lg text-[#8A9855] max-w-md">
+            Dibuat dari biji kopi Indonesia pilihan untuk pengalaman minum kopi terbaik setiap hari
+          </p>
+        </div>
+
+        <div class="lg:w-1/2 mt-10 lg:mt-0 flex justify-center relative">
+          <img src="img/hero-cup.png" alt="Fore Coffee Cup" class="max-w-xs sm:max-w-sm lg:max-w-md drop-shadow-xl">
+        </div>
+
+        <div class="hidden md:flex lg:w-10 justify-center">
+          <button class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-foreGreen hover:text-foreGreen transition">
+            ›
+          </button>
+        </div>
+      </section>
+
+      <section class="relative w-screen bg-white left-1/2 right-1/2 -mx-[50vw] py-24 overflow-hidden">
+
+        <div class="absolute inset-0 flex justify-center pointer-events-none">
+          <h2 class="hidden md:block text-[90px] font-extrabold text-gray-200 opacity-60 
+                     whitespace-nowrap select-none tracking-tight">
+            story our story your story your story your story
+          </h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 relative">
+
+          <h3 class="relative z-10 text-foreGreen text-[52px] font-extrabold mb-16">
+            Our Story
+          </h3>
+
+          <div class="relative z-10 flex flex-col lg:flex-row items-start gap-14">
+
+            <div class="lg:w-[48%]">
+              <img src="img/2.png"
+                   class="w-full rounded-[32px] shadow-md object-cover">
+            </div>
+
+            <div class="lg:w-[48%] text-[17px] leading-[1.8] text-gray-700 space-y-6">
+
+              <p>
+                Didirikan pada tahun 2018, Fore Coffee adalah startup kopi yang bercita-cita membuat kopi spesial terbaik untuk pelanggan. Seperti nama kami yang diambil dari kata “Forest” atau hutan, kami ingin tumbuh cepat, kuat, tinggi, dan menciptakan kehidupan di sekitar. Kami ingin kehadiran kami bisa meningkatkan kualitas kopi dalam komunitas kita.
+              </p>
+
+              <p>
+                Dengan jaringan dan pengalaman, kami menggunakan teknologi terkini untuk alat dan biji kopi kami. Diambil langsung dari petani pilihan, biji kopi berkualitas tinggi diproses dan dipanggang sempurna oleh kami, dan diajarkan kepada barista kompeten kami, dengan semangat untuk menyajikan satu cangkir kebahagiaan hanya untukmu.
+              </p>
+
+              <a href="#"
+                 class="inline-flex items-center px-7 py-3 mt-2 bg-foreGreen text-white rounded-full 
+                        text-[14px] font-semibold hover:bg-foreGreenDark transition">
+                Selengkapnya <span class="ml-2 text-lg">›</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="py-16">
+        <div class="mb-8">
+          <h2 class="text-[52px] font-extrabold text-gray-200 leading-none select-none hidden md:block">
+            FORENEWS
+          </h2>
+          <div class="flex items-end justify-between mt-2">
+            <h3 class="text-4xl font-extrabold text-foreGreen">
+              ForeNews
+            </h3>
+            <p class="hidden md:block text-sm text-gray-700 max-w-xs">
+              Dapatkan berita terbaru dan informasi menarik dari kami!
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+            <img src="img/3.jpg" alt="" class="h-40 w-full object-cover">
+            <div class="p-4 flex flex-col flex-1">
+              <h4 class="font-semibold text-sm mb-1 line-clamp-2">
+                FORE Perkuat Komitmen Keberlanjutan Melalui...
+              </h4>
+              <p class="text-xs text-gray-500 mb-4">
+                Solo, 12 November 2025 – PT Fore Kopi Indonesia Tbk
+              </p>
+              <p class="mt-auto text-xs text-gray-400">
+                November 14, 2025
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+            <img src="img/4.png" alt="" class="h-40 w-full object-cover">
+            <div class="p-4 flex flex-col flex-1">
+              <h4 class="font-semibold text-sm mb-1 line-clamp-2">
+                [Siaran Pers] FORE Raih Pertumbuhan EBITDA...
+              </h4>
+              <p class="text-xs text-gray-500 mb-4">
+                Jakarta, 23 Oktober 2025 – PT Fore Kopi Indonesia Tbk
+              </p>
+              <p class="mt-auto text-xs text-gray-400">
+                Oktober 23, 2025
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+            <img src="img/5.png" alt="" class="h-40 w-full object-cover">
+            <div class="p-4 flex flex-col flex-1">
+              <h4 class="font-semibold text-sm mb-1 line-clamp-2">
+                [Siaran Pers] Fore Kembangkan Lini Bisnis...
+              </h4>
+              <p class="text-xs text-gray-500 mb-4">
+                Tangerang, Banten – 9 September 2025 – Fore, yang telah
+              </p>
+              <p class="mt-auto text-xs text-gray-400">
+                September 9, 2025
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+            <img src="img/6.png" alt="" class="h-40 w-full object-cover">
+            <div class="p-4 flex flex-col flex-1">
+              <h4 class="font-semibold text-sm mb-1 line-clamp-2">
+                [Siaran Pers] FORE Berkembang Pesat dan...
+              </h4>
+              <p class="text-xs text-gray-500 mb-4">
+                Jakarta, 30 Juli 2025 – FORE mencatat awal tahun yang
+              </p>
+              <p class="mt-auto text-xs text-gray-400">
+                Juli 30, 2025
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-8 flex justify-center">
+          <a href="#"
+             class="px-8 py-2.5 rounded-full bg-foreGreen text-white text-sm font-semibold hover:bg-foreGreenDark transition">
+            Selengkapnya
+          </a>
+        </div>
+      </section>
+
+      <section id="app"
+        class="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-white py-24 overflow-hidden">
+
+        <div class="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:space-x-20">
+
+          <div class="lg:w-1/2 mb-14 lg:mb-0">
+
+            <p class="text-[12px] tracking-[0.28em] uppercase text-[#7A847C] mb-4">
+              FORE COFFEE APP
+            </p>
+
+            <h3 class="text-[36px] font-extrabold text-[#0A4F2F] leading-tight mb-6">
+              Kopi hanya dalam satu ketukan!<br>
+              Cepat dan mudah dengan berbagai keuntungan ekstra
+            </h3>
+
+            <p class="text-[18px] text-gray-700 leading-relaxed mb-3 max-w-lg">
+              Nikmati pengalaman minum kopi terbaik, promo, dan banyak lainnya!
+            </p>
+
+            <p class="text-[16px] text-gray-700 leading-relaxed mb-8 max-w-lg">
+              Unduh sekarang!
+            </p>
+
+            <div class="flex space-x-4">
+              <img src="img/Google-Play-Badge.png" class="h-12 object-contain" />
+              <img src="img/App-Store-Badge.png" class="h-12 object-contain" />
+            </div>
+
+          </div>
+
+          <div class="lg:w-1/2 relative flex justify-center">
+
+            <div class="absolute w-[500px] h-[500px] bg-[#0A4F2F]/25 rounded-full top-12 -left-4 lg:left-6"></div>
+
+            <img src="img/7.png"
+                 class="relative h-[500px] drop-shadow-2xl z-10">
+          </div>
+        </div>
+
+      </section>
+
+      <section class="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-white py-20 overflow-hidden">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+          <div
+            class="relative rounded-[40px] p-10 shadow-sm overflow-hidden"
+            style="
+              background: #F8F4E8;
+              background-image: radial-gradient(circle at center, rgba(255,255,255,0.55) 0%, rgba(248,244,232,1) 70%);
+            "
+          >
+
+            <h2 class="absolute top-6 left-1/2 -translate-x-1/2 text-[54px] md:text-[70px] font-extrabold text-gray-300 opacity-40 whitespace-nowrap select-none">
+              MORE BENEFITS & PROMO
+            </h2>
+
+            <div class="relative text-center mt-14 mb-10">
+              <h3 class="text-3xl sm:text-4xl font-extrabold text-foreGreen">
+                Promo di Fore Coffee
+              </h3>
+              <p class="mt-2 text-sm text-gray-700">
+                Temukan berbagai promo menarik di sini!
+              </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-3 mt-5">
+
+              <div class="text-center">
+                <img src="img/9.jpg" class="w-full rounded-2xl mb-4">
+              </div>
+
+              <div class="text-center">
+                <img src="img/8.jpg" class="w-full rounded-2xl mb-4">
+              </div>
+
+              <div class="text-center">
+                <img src="img/10.jpg" class="w-full rounded-2xl mb-4">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-white py-10 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+
+          <div class="relative w-full h-32">
+
+            <img src="img/matcha-ice-1.png"
+                 class="absolute left-0 md:left-20 top-6 h-36 hidden md:block">
+
+            <img src="img/Sunny-Citrus-Jasmine.png"
+                 class="absolute right-0 md:right-20 -top-2 h-40 hidden md:block">
+
+          </div>
+
+          <div class="text-center mb-10 -mt-6">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-foreGreen mb-3">
+              Testimoni
+            </h2>
+
+            <div class="inline-block px-6 py-2 border border-gray-300 rounded-full text-gray-600 text-sm">
+              Kolaborasi Sukses Kami
+            </div>
+          </div>
+
+          <div class="grid gap-8 md:grid-cols-3">
+
+            <div class="flex flex-col items-center text-center">
+              <div class="bg-white rounded-[20px] shadow-md p-6 mb-6 w-full min-h-[230px] flex flex-col">
+                <p class="text-left text-sm text-gray-700 leading-relaxed">
+                  <span class="text-foreGreen text-xl mr-1">❝</span>
+                  Integrasi Ekosistem Digital Fore x blu memudahkan Gen Z & Millennials 
+                  membeli kopi lewat pembayaran digital untuk menemani kegiatan sehari-hari 
+                  sambil menikmati berbagai promo yang tersedia! Terbukti, transaksi selalu 
+                  tinggi karena Fore selalu di hati!
+                </p>
+              </div>
+
+              <img src="img/logo-blu.png" class="h-10 mb-2">
+              <p class="font-semibold text-gray-700">Albert Kurniawan</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div class="bg-white rounded-[20px] shadow-md p-6 mb-6 w-full min-h-[230px] flex flex-col">
+                <p class="text-left text-sm text-gray-700 leading-relaxed">
+                  <span class="text-foreGreen text-xl mr-1">❝</span>
+                  Kami sangat mengapresiasi inisiatif dari Fore Coffee untuk berkolaborasi 
+                  bersama dalam kampanye ini. Semoga kolaborasi kami dapat menginspirasi 
+                  pihak lain terutama dalam melakukan kampanye kebaikan.
+                </p>
+              </div>
+
+              <img src="img/logo-samanda.png" class="h-10 mb-2">
+              <p class="font-semibold text-gray-700">Samanda Tondang</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div class="bg-white rounded-[20px] shadow-md p-6 mb-6 w-full min-h-[230px] flex flex-col">
+                <p class="text-left text-sm text-gray-700 leading-relaxed">
+                  <span class="text-foreGreen text-xl mr-1">❝</span>
+                  Fore Coffee is one of the best merchants I have ever handled as a key account manager. 
+                  We created many collaborations such as Exclusive Seasonal Menu, Percaya Project, and more. 
+                  The team is always helpful, organized, and fast in coordinating everything.
+                </p>
+              </div>
+
+              <img src="img/logo-grabfood.png" class="h-10 mb-2">
+              <p class="font-semibold text-gray-700">Devi Alfilovita</p>
+            </div>
+
+          </div>
+
+          <div class="mt-6 flex justify-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-foreGreen"></span>
+            <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+            <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-white py-16 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+
+          <div class="text-center mb-8">
+            <p class="text-sm text-gray-700 mb-1">Follow kami!</p>
+            <h3 class="text-3xl font-extrabold text-foreGreen mb-3">@fore.coffee</h3>
+            <a class="inline-flex items-center px-6 py-2 rounded-full border border-foreGreen text-foreGreen text-sm font-semibold hover:bg-foreGreen hover:text-white transition">
+              Follow
+            </a>
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-4 mb-4">
+            <img src="img/ig1.jpg" class="w-full aspect-square object-cover rounded-[18px]">
+            <img src="img/ig2.jpg" class="w-full aspect-square object-cover rounded-[18px]">
+            <img src="img/ig3.jpg" class="w-full aspect-square object-cover rounded-[18px]">
+            <img src="img/ig4.jpg" class="w-full aspect-square object-cover rounded-[18px]">
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-4">
+            <img src="img/ig5.jpg" class="w-full aspect-square object-cover rounded-[18px]">
+            <img src="img/ig6.jpg" class="w-full aspect-square object-cover rounded-[18px]">
+            <img src="img/ig7.jpg" class="w-full aspect-square object-cover rounded-[18px]">
+            <img src="img/ig8.jpg" class="w-full aspect-square object-cover rounded-[18px]">
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="relative bg-[#F8FAF8] pt-20 pb-10 overflow-hidden">
+
+      <img src="img/logo-fore.svg"
+           class="absolute left-1/2 top-5 -translate-x-1/2 opacity-5 w-[320px] pointer-events-none select-none" />
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <div class="grid gap-12 md:grid-cols-3">
+
+<div>
+  <img src="img/Logo_fore_2020_color_landscape.jpg" alt="Fore" class="h-10 mb-4">
+
+  <p class="text-[13px] text-gray-600 mt-4">
+    © 2025 Fore Coffee. All rights reserved.
+  </p>
+
+  <div class="flex space-x-3 text-[13px] text-gray-600 mt-1">
+    <a href="#" class="hover:text-foreGreen">Terms and Conditions</a>
+    <span>•</span>
+    <a href="#" class="hover:text-foreGreen">Privacy Policy</a>
+  </div>
+
+  <div class="mt-6">
+    <h4 class="font-semibold text-[15px] mb-3">Navigation</h4>
+    <ul class="space-y-2 text-[13px] text-gray-700">
+      <li><a href="index.html" class="hover:text-foreGreen">Home</a></li>
+      <li><a href="biodata.html" class="hover:text-foreGreen">Biodata</a></li>
+      <li><a href="contact_us.html" class="hover:text-foreGreen">Contact Us</a></li>
+      <li><a href="freepage.html" class="hover:text-foreGreen">Free Page</a></li>
+      <li><a href="posts.html" class="hover:text-foreGreen">Posts</a></li>
+    </ul>
+  </div>
+
+  <div class="mt-6">
+    <h4 class="font-semibold text-[15px] mb-3">External Links</h4>
+    <ul class="space-y-2 text-[13px] text-gray-700">
+      <li><a href="https://fti.unai.edu" target="_blank" class="hover:text-foreGreen">FTI UNAI</a></li>
+      <li><a href="https://unai.edu" target="_blank" class="hover:text-foreGreen">UNAI Website</a></li>
+    </ul>
+  </div>
+</div>
+
+
+          <div class="text-[14px] text-gray-800 leading-[1.45]">
+            <h4 class="font-semibold text-[15px] mb-3">Customer Center</h4>
+
+            <p>Gedung Graha Ganesha<br>
+               Lantai 1 Suite 120 & 130</p>
+
+            <p class="mt-2">
+              Jl. Hayam Wuruk No. 28, Kelurahan Kebon Klapa,<br>
+              Kecamatan Gambir, Jakarta Pusat, DKI Jakarta
+            </p>
+
+            <p class="mt-2">0812-1111-8456</p>
+          </div>
+
+          <div class="text-[14px] text-gray-800 leading-[1.45]">
+            <h4 class="font-semibold text-[15px] mb-3">
+              Consumer Complaints Service Contact Information
+            </h4>
+
+            <p>
+              Directorate General of Consumer Protection and Trade Compliance,<br>
+              Ministry of Trade of the Republic of Indonesia
+            </p>
+
+            <p class="mt-2 italic">
+              WhatsApp Ditjen PKTN: 0853-1111-1010
+            </p>
+          </div>
+
+        </div>
+
+        <div class="mt-10 flex justify-end space-x-3 pr-2">
+
+          <a class="w-9 h-9 flex items-center justify-center rounded-full bg-[#DFECE4] text-gray-800">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+
+          <a class="w-9 h-9 flex items-center justify-center rounded-full bg-[#DFECE4] text-gray-800">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+
+          <a class="w-9 h-9 flex items-center justify-center rounded-full bg-[#DFECE4] text-gray-800">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a class="w-9 h-9 flex items-center justify-center rounded-full bg-[#DFECE4] text-gray-800">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+          <a class="w-9 h-9 flex items-center justify-center rounded-full bg-[#DFECE4] text-gray-800">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var toggleBtn = document.getElementById('mobile-menu-toggle');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      if (toggleBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', function () {
+          var isHidden = mobileMenu.classList.contains('hidden');
+
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('block');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+          } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('block');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

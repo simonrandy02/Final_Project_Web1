@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posts – Final Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CUSTOM COLORS -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            foreGreen: "#2e8b57",
+            foreBrown: "#5a3e36",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-gray-50">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between py-4">
+
+        <!-- Logo -->
+        <img src="img/Logo_fore_2020_color_landscape.jpg" alt="Fore Coffee" class="h-8">
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-800">
+          <a href="index.html" class="hover:text-foreGreen">Home</a>
+          <a href="biodata.html" class="hover:text-foreGreen">Biodata</a>
+          <a href="contact_us.html" class="hover:text-foreGreen">Contact</a>
+          <a href="posts.html" class="text-foreGreen font-semibold">Posts</a>
+          <a href="freepage.html" class="hover:text-foreGreen">FreePage</a>
+        </nav>
+
+        <!-- Right Side -->
+        <div class="flex items-center space-x-4 text-sm">
+          <a href="#app"
+            class="hidden md:inline-flex px-5 py-2 rounded-full border border-foreGreen  text-foreGreen hover:bg-foreGreen hover:text-white transition font-semibold">
+            Download App
+          </a>
+
+          <!-- Mobile menu icon -->
+          <button id="mobile-menu-toggle"
+            class="lg:hidden flex items-center justify-center w-10 h-10 rounded-md border border-gray-300"
+            aria-label="Toggle navigation">
+            <div class="space-y-1.5">
+              <span class="block w-5 h-0.5 bg-gray-700"></span>
+              <span class="block w-5 h-0.5 bg-gray-700"></span>
+              <span class="block w-5 h-0.5 bg-gray-700"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+      <div class="px-4 py-4 space-y-4">
+
+        <nav class="flex flex-col space-y-3 text-sm font-medium text-gray-800">
+          <a href="index.html" class="hover:text-foreGreen">Home</a>
+          <a href="biodata.html" class="hover:text-foreGreen">Biodata</a>
+          <a href="contact_us.html" class="hover:text-foreGreen">Contact</a>
+          <a href="posts.html" class="text-foreGreen font-semibold">Posts</a>
+          <a href="freepage.html" class="hover:text-foreGreen">FreePage</a>
+        </nav>
+
+        <a href="#app"
+          class="w-full inline-flex justify-center px-5 py-2 rounded-full border border-foreGreen text-foreGreen font-semibold hover:bg-foreGreen hover:text-white transition">
+          Download App
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="bg-foreBrown text-white text-sm">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 py-2 flex flex-col md:flex-row items-center justify-center gap-2">
+        <span class="text-center">Something new from us! Enjoy a new experience at FORE DONUT</span>
+        <a href="#" class="px-4 py-1 bg-white text-foreBrown rounded-full text-xs font-semibold hover:bg-gray-100 transition">
+          Visit
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 md:px-6 py-10">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Posts Data (ID: 39)</h1>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="text-center text-gray-600 text-lg">Loading data...</div>
+
+    <!-- Error Message -->
+    <div id="error" class="hidden text-center text-red-600 font-semibold"></div>
+
+    <!-- Post Container -->
+    <div id="post-container" class="hidden mt-6">
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-md">
+
+        <p class="text-gray-700">
+          <span class="font-bold">Post ID:</span>
+          <span id="post-id"></span>
+        </p>
+
+        <h2 id="post-title" class="text-2xl font-semibold text-foreGreen mt-4"></h2>
+
+        <p id="post-body" class="text-gray-700 leading-relaxed mt-3"></p>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-foreBrown text-white mt-16 py-6">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 text-center">
+      <p class="text-sm">&copy; 2024 Final Project · All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const API_URL = "https://jsonplaceholder.typicode.com/posts/39";
+
+    const loading = document.getElementById("loading");
+    const errorMsg = document.getElementById("error");
+    const postContainer = document.getElementById("post-container");
+
+    const postIdElem = document.getElementById("post-id");
+    const postTitleElem = document.getElementById("post-title");
+    const postBodyElem = document.getElementById("post-body");
+
+    // FETCH API
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(data => {
+        loading.classList.add("hidden");
+
+        postIdElem.textContent = data.id;
+        postTitleElem.textContent = data.title;
+        postBodyElem.textContent = data.body;
+
+        postContainer.classList.remove("hidden");
+      })
+      .catch(() => {
+        loading.classList.add("hidden");
+        errorMsg.textContent = "Failed to fetch data!";
+        errorMsg.classList.remove("hidden");
+      });
+
+    // MOBILE MENU
+    document.getElementById("mobile-menu-toggle")
+      .addEventListener("click", () => {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      });
+  </script>
+
+</body>
+</html>
